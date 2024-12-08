@@ -1,1 +1,1 @@
-
+with recursive numbers as (select 2 as n union all select n+1 from numbers where n<= 1000), composite as (select n1.n from numbers n1 join numbers n2 on n2.n less than n1.n and n1.n% n2.n =0) select group_concat(n separator'&') from numbers where n not in (select n from composite)
